@@ -13,5 +13,11 @@ export class Calc {
     return age * 31540000;
   }
 
+  yearAge(date){
+    let today = new Date();
+    let birthdate = new Date(date);
+    const age = new Date(today-birthdate).getFullYear()-1970;
+    return age;
+  }
 
 }
