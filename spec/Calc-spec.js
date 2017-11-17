@@ -8,8 +8,8 @@ describe('Calc', function(){
 
   beforeEach(function(){
     calc = new Calc();
-    birthdate = '2016-01-01';
-    gender = 'female'
+    birthdate = '1700-01-01';
+    gender = 'male'
   });
 
   it('years to seconds', function(){
@@ -63,5 +63,10 @@ describe('Calc', function(){
     let lifeExpectancy = calc.lifeExpectancy(gender);
     expect(lifeExpectancy).toEqual(101);
   });
+
+  it("time left on earts"), function() {
+    let ageMinus = calc.yearsLeft(birthdate, gender);
+    expect(ageMinus).toEqual("You passed the life expectancy.")
+  }
 
 });

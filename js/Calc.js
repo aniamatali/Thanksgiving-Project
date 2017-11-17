@@ -50,6 +50,18 @@ export class Calc {
       }
     }
 
+    yearsLeft(date, gender) {
+      let averageAge = this.lifeExpectancy(gender);
+      let Age = this.yearAge(date);
+      if (Age>averageAge) {
+        const yearsPlus = Age - averageAge;
+        return ("You passed the life expectancy.");
+      } else {
+        const ageMinus = (averageAge - Age);
+        return ("You will die in about" + ageMinus + "years.");
+      }
+    }
+
 
   secondsBetween(date1, date2){
   let day1 = new Date(date1);

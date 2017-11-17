@@ -13,7 +13,6 @@ $(document).ready(function () {
     const earthAge = calc.yearAge(birthdate);
     const secondsAge = calc.dateToSeconds(birthdate);
     const lifeExpectancy = calc.lifeExpectancy(gender);
-
     const marsAge = calc.marsAge(birthdate);
     const mercuryAge = calc.mercuryAge(birthdate);
     const venusAge = calc.venusAge(birthdate);
@@ -22,9 +21,13 @@ $(document).ready(function () {
     $('#results-earth').append("<li>" + "Your years on Earth in seconds = " + secondsAge + "</li>");
     $('#results-earth').append("<li>" + "Your age in Earth years = " + earthAge + "</li>");
     $('#results-earth').append("<li>" + "Your life expectancy on Earth in years = " + lifeExpectancy + "</li>");
+    $('#results-mars').append("<li>" + "Your age in Mars years = " + marsAge + "</li>");
+    $('#results-mercury').append("<li>" + "Your age in Mercury years = " + mercuryAge + "</li>");
+    $('#results-venus').append("<li>" + "Your age in Venus years = " + venusAge + "</li>");
+    $('#results-jupiter').append("<li>" + "Your age in Jupiter years = " + jupiterAge + "</li>");
   });
 
-    $('#date-form').submit(function(event){
+  $('#date-form').submit(function(event){
     event.preventDefault();
     $(".seconds").show();
     const startDate = $('#start-date').val();
