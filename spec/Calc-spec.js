@@ -4,10 +4,12 @@ describe('Calc', function(){
 
   let calc;
   let birthdate;
+  let gender;
 
   beforeEach(function(){
     calc = new Calc();
     birthdate = '2016-01-01';
+    gender = 'female'
   });
 
   it('years to seconds', function(){
@@ -44,12 +46,22 @@ describe('Calc', function(){
 
   it("Age on venus", function(){
     let venusAge = calc.venusAge(birthdate);
-    expect(venusAge).toEqual(1.612);
+    expect(venusAge).toEqual(1.61);
   });
 
   it("age on joopeetur", function(){
     let jupiterAge = calc.jupiterAge(birthdate);
     expect(jupiterAge).toEqual(.08);
+  });
+
+  it("life expectancy", function(){
+    let lifeExpectancy = calc.lifeExpectancy(gender);
+    expect(lifeExpectancy).toEqual(99);
+  });
+
+  it("life expectancy", function(){
+    let lifeExpectancy = calc.lifeExpectancy(gender);
+    expect(lifeExpectancy).toEqual(101);
   });
 
 });

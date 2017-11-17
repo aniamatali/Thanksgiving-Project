@@ -21,19 +21,28 @@ export class Calc {
   }
 
   marsAge(date) {
-    return (this.yearAge(date) / 1.88);
+    return Math.round(100*(this.yearAge(date) / 1.88))/100;
   }
 
   mercuryAge(date) {
-    return (this.yearAge(date) / .24);
+    return Math.round(100*(this.yearAge(date) / 0.24))/100;
   }
 
   venusAge(date) {
-    return (this.yearAge(date) / .62);
+    return Math.round(100*(this.yearAge(date) / 0.62))/100;
   }
 
   jupiterAge(date) {
-    return (this.yearAge(date) / 11.86);
+    return Math.round(100*(this.yearAge(date) / 11.86))/100;
   }
 
-}
+  lifeExpectancy(gender) {
+    let averageLife = 100;
+    if (gender == "male") {
+      return averageLife -= 1;
+    } else if
+      (gender != "male") {
+        return averageLife += 1;
+      }
+    }
+  }
