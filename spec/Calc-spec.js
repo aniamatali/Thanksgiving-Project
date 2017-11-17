@@ -13,6 +13,10 @@ describe('Calc', function(){
     expect(result1).toEqual(31557600);
   });
 
-  
+  it ('days to seconds', function(){
+    const result2 = calc.daysToSeconds(2);
+
+    expect(result2).toEqual(172800);
+  });
 
 });
