@@ -13,6 +13,10 @@ export class Calc {
     return age * 31540000;
   }
 
+  dateToSeconds(date) {
+    return this.yearAge(date)*31540000;
+  }
+
   yearAge(date){
     let today = new Date();
     let birthdate = new Date(date);
@@ -45,4 +49,12 @@ export class Calc {
         return averageLife += 1;
       }
     }
-  }
+
+
+  secondsBetween(date1, date2){
+  let day1 = new Date(date1);
+  let day2 = new Date(date2);
+  return (new Date(day1) - new Date(day2)) / 1000;
+}
+
+}
