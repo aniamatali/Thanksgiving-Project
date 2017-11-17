@@ -20,4 +20,20 @@ export class Calc {
     return age;
   }
 
+  marsAge(date) {
+    return (this.yearAge(date) / 1.88);
+  }
+
+  mercuryAge(date) {
+    return (this.yearAge(date) / .24);
+  }
+
+  venusAge(date) {
+    return (this.yearAge(date) / .62);
+  }
+
+  jupiterAge(date) {
+    return (this.yearAge(date) / 11.86);
+  }
+
 }
