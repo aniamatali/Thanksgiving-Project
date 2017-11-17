@@ -58,9 +58,67 @@ export class Calc {
         return ("You passed the life expectancy.");
       } else {
         const ageMinus = (averageAge - Age);
-        return ("You will die in about" + ageMinus + "years.");
+        return ("You will die in about " + ageMinus + " years.");
       }
     }
+
+    yearsLeftMercury(date, gender) {
+      const earthAge = this.lifeExpectancy(gender);
+      let mercuryExpectancy = (earthAge / 0.24);
+      let mercuryAge = this.lifeExpectancy(gender);
+      let Age = this.mercuryAge(date);
+      if (Age>mercuryAge) {
+        const yearsPlus = Age - mercuryAge;
+        return ("You passed the life expectancy.");
+      } else {
+        const ageMinus = (mercuryAge - Age);
+        return ("You will die in about " + ageMinus + " years.");
+      }
+    }
+
+    yearsLeftMars(date, gender) {
+      const earthAge = this.lifeExpectancy(gender);
+      let marsExpectancy = (earthAge / 1.88);
+      let marsAge = this.lifeExpectancy(gender);
+      let Age = this.marsAge(date);
+      if (Age>marsAge) {
+        const yearsPlus = Age - marsAge;
+        return ("You passed the life expectancy.");
+      } else {
+        const ageMinus = (marsAge - Age);
+        return ("You will die in about " + ageMinus + " years.");
+      }
+    }
+
+    yearsLeftVenus(date, gender) {
+      const earthAge = this.lifeExpectancy(gender);
+      let venusExpectancy = (earthAge / 0.62);
+      let venusAge = this.lifeExpectancy(gender);
+      let Age = this.venusAge(date);
+      if (Age>venusAge) {
+        const yearsPlus = Age - venusAge;
+        return ("You passed the life expectancy.");
+      } else {
+        const ageMinus = (venusAge - Age);
+        return ("You will die in about " + ageMinus + " years.");
+      }
+    }
+
+    yearsLeftJupiter(date, gender) {
+      const earthAge = this.lifeExpectancy(gender);
+      let jupiterExpectancy = (earthAge / 1.88);
+      let jupiterAge = this.lifeExpectancy(gender);
+      let Age = this.jupiterAge(date);
+      if (Age>jupiterAge) {
+        const yearsPlus = Age - jupiterAge;
+        return ("You passed the life expectancy.");
+      } else {
+        const ageMinus = (jupiterAge - Age);
+        return ("You will die in about " + ageMinus + " years.");
+      }
+    }
+
+
 
 
   secondsBetween(date1, date2){

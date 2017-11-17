@@ -73,6 +73,79 @@ var Calc = exports.Calc = function () {
       }
     }
   }, {
+    key: "yearsLeft",
+    value: function yearsLeft(date, gender) {
+      var averageAge = this.lifeExpectancy(gender);
+      var Age = this.yearAge(date);
+      if (Age > averageAge) {
+        var yearsPlus = Age - averageAge;
+        return "You passed the life expectancy.";
+      } else {
+        var ageMinus = averageAge - Age;
+        return "You will die in about " + ageMinus + " years.";
+      }
+    }
+  }, {
+    key: "yearsLeftMercury",
+    value: function yearsLeftMercury(date, gender) {
+      var earthAge = this.lifeExpectancy(gender);
+      var mercuryExpectancy = earthAge / 0.24;
+      var mercuryAge = this.lifeExpectancy(gender);
+      var Age = this.mercuryAge(date);
+      if (Age > mercuryAge) {
+        var yearsPlus = Age - mercuryAge;
+        return "You passed the life expectancy.";
+      } else {
+        var ageMinus = mercuryAge - Age;
+        return "You will die in about " + ageMinus + " years.";
+      }
+    }
+  }, {
+    key: "yearsLeftMars",
+    value: function yearsLeftMars(date, gender) {
+      var earthAge = this.lifeExpectancy(gender);
+      var marsExpectancy = earthAge / 1.88;
+      var marsAge = this.lifeExpectancy(gender);
+      var Age = this.marsAge(date);
+      if (Age > marsAge) {
+        var yearsPlus = Age - marsAge;
+        return "You passed the life expectancy.";
+      } else {
+        var ageMinus = marsAge - Age;
+        return "You will die in about " + ageMinus + " years.";
+      }
+    }
+  }, {
+    key: "yearsLeftVenus",
+    value: function yearsLeftVenus(date, gender) {
+      var earthAge = this.lifeExpectancy(gender);
+      var venusExpectancy = earthAge / 0.62;
+      var venusAge = this.lifeExpectancy(gender);
+      var Age = this.venusAge(date);
+      if (Age > venusAge) {
+        var yearsPlus = Age - venusAge;
+        return "You passed the life expectancy.";
+      } else {
+        var ageMinus = venusAge - Age;
+        return "You will die in about " + ageMinus + " years.";
+      }
+    }
+  }, {
+    key: "yearsLeftJupiter",
+    value: function yearsLeftJupiter(date, gender) {
+      var earthAge = this.lifeExpectancy(gender);
+      var jupiterExpectancy = earthAge / 1.88;
+      var jupiterAge = this.lifeExpectancy(gender);
+      var Age = this.jupiterAge(date);
+      if (Age > jupiterAge) {
+        var yearsPlus = Age - jupiterAge;
+        return "You passed the life expectancy.";
+      } else {
+        var ageMinus = jupiterAge - Age;
+        return "You will die in about " + ageMinus + " years.";
+      }
+    }
+  }, {
     key: "secondsBetween",
     value: function secondsBetween(date1, date2) {
       var day1 = new Date(date1);
@@ -102,23 +175,28 @@ $(document).ready(function () {
     var earthAge = calc.yearAge(birthdate);
     var secondsAge = calc.dateToSeconds(birthdate);
     var lifeExpectancy = calc.lifeExpectancy(gender);
-
     var marsAge = calc.marsAge(birthdate);
     var mercuryAge = calc.mercuryAge(birthdate);
     var venusAge = calc.venusAge(birthdate);
     var jupiterAge = calc.jupiterAge(birthdate);
+    var yearsLeft = calc.yearsLeft(birthdate, gender);
+    var yearsLeftMercury = calc.yearsLeftMercury(birthdate, gender);
+    var yearsLeftMars = calc.yearsLeftMars(birthdate, gender);
+    var yearsLeftJupiter = calc.yearsLeftJupiter(birthdate, gender);
+    var yearsLeftVenus = calc.yearsLeftVenus(birthdate, gender);
 
     $('#results-earth').append("<li>" + "Your years on Earth in seconds = " + secondsAge + "</li>");
     $('#results-earth').append("<li>" + "Your age in Earth years = " + earthAge + "</li>");
     $('#results-earth').append("<li>" + "Your life expectancy on Earth in years = " + lifeExpectancy + "</li>");
-
+    $('#results-earth').append("<li>" + yearsLeft + "</li>");
     $('#results-mars').append("<li>" + "Your age in Mars years = " + marsAge + "</li>");
-
+    $('#results-mars').append("<li>" + yearsLeftMars + "</li>");
     $('#results-mercury').append("<li>" + "Your age in Mercury years = " + mercuryAge + "</li>");
-
+    $('#results-mercury').append("<li>" + yearsLeftMercury + "</li>");
     $('#results-venus').append("<li>" + "Your age in Venus years = " + venusAge + "</li>");
-
+    $('#results-venus').append("<li>" + yearsLeftVenus + "</li>");
     $('#results-jupiter').append("<li>" + "Your age in Jupiter years = " + jupiterAge + "</li>");
+    $('#results-jupiter').append("<li>" + yearsLeftJupiter + "</li>");
   });
 
   $('#date-form').submit(function (event) {
