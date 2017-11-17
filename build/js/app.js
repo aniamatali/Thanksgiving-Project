@@ -10,17 +10,24 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Calc = exports.Calc = function () {
-  function Calc(number) {
+  function Calc() {
     _classCallCheck(this, Calc);
-
-    number = parseInt(number);
-    this.number = number;
   }
 
   _createClass(Calc, [{
-    key: "func",
-    value: function func() {
-      return this.number += 1;
+    key: "yearsToSeconds",
+    value: function yearsToSeconds(years) {
+      return years * 31540000;
+    }
+  }, {
+    key: "daysToSeconds",
+    value: function daysToSeconds(days) {
+      return days * 86400;
+    }
+  }, {
+    key: "ageToSeconds",
+    value: function ageToSeconds(age) {
+      return age * 31540000;
     }
   }]);
 
@@ -33,14 +40,7 @@ var Calc = exports.Calc = function () {
 var _Calc = require('./../js/Calc.js');
 
 $(document).ready(function (event) {
-  $('.btn').click(function (e) {
     event.preventDefault();
-    var numberIn = $('#numberIn').val();
-    var calc = new _Calc.Calc(numberIn);
-    var numberOut = calc.func();
-    console.log(numberIn, numberOut);
-    $('#numberOut').text(numberOut);
-  });
 });
 
 },{"./../js/Calc.js":1}]},{},[2]);
